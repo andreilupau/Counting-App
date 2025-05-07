@@ -3,7 +3,6 @@
 A simple and interactive counter web application that allows users to increment, decrement, and save numeric values. Great for learning DOM manipulation, event handling, and UI styling with HTML, CSS, and JavaScript.
 
 <img src="https://github.com/user-attachments/assets/491c4349-caa6-4fb9-9683-064ab04112d6" alt="Screenshot 2025-05-06 222518" style="width: 50%;">
-![Screenshot 2025-05-06 222518](https://github.com/user-attachments/assets/491c4349-caa6-4fb9-9683-064ab04112d6)
 
 ---
 
