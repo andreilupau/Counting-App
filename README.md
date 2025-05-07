@@ -36,9 +36,5 @@ A simple and interactive counter web application that allows users to increment,
 <img src="https://github.com/user-attachments/assets/e31fe24d-73c6-454f-9c5f-00cbb3af4226" style="width: 50%;">
 <img src="https://github.com/user-attachments/assets/2982c77a-a44b-4cad-8c3e-276e3ef60dad" style="width: 50%;">
 
-
-### 📱 Mobile View
-
-<img src="https://github.com/user-attachments/assets/83516d14-bef6-4f8f-801d-6189d02d41f6" style="width: 40%;">
 ---
 ### Thank you for checking! :)
