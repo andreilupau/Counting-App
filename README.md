@@ -2,7 +2,7 @@
 
 A simple and interactive counter web application that allows users to increment, decrement, and save numeric values. Great for learning DOM manipulation, event handling, and UI styling with HTML, CSS, and JavaScript.
 
-![Counter App Screenshot](./screenshots/counter-desktop.png)
+![Screenshot 2025-05-06 222518](https://github.com/user-attachments/assets/491c4349-caa6-4fb9-9683-064ab04112d6)
 
 ---
 
@@ -30,22 +30,14 @@ A simple and interactive counter web application that allows users to increment,
 
 ## 🖼️ Screenshots
 
-### 💻 Desktop View
+![Screenshot 2025-05-06 222534](https://github.com/user-attachments/assets/edfd0cb5-9fa3-4c3d-88d0-bee3359502c1)
+![Screenshot 2025-05-06 222606](https://github.com/user-attachments/assets/e31fe24d-73c6-454f-9c5f-00cbb3af4226)
+![Screenshot 2025-05-06 222624](https://github.com/user-attachments/assets/2982c77a-a44b-4cad-8c3e-276e3ef60dad)
 
-![Desktop Screenshot](./screenshots/counter-desktop.png)
 
 ### 📱 Mobile View
 
-![Mobile Screenshot](./screenshots/counter-mobile.png)
-
-> *Screenshots are stored in the `screenshots/` folder. Replace with your own if needed.*
+![Screenshot 2025-05-06 222655](https://github.com/user-attachments/assets/b86525e0-9c9b-4b56-b4b3-9f7b148fa346)
 
 ---
 
-## 📦 Installation
-
-To run this project locally:
-
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/username/counter-app.git
