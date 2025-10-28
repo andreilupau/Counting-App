@@ -1,56 +1,269 @@
+
+
+/* DEFAULT STUFF */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap");
+:root {
+  --bg-1: #60286a;
+  --bg-2: #2e9ad1;
+  --card: rgba(255, 255, 255, 0.08);
+  --accent: #6f4ce0;
+  --muted: #5b4770;
+  --btn-grad-start: #3b3ee6;
+  --btn-grad-end: #6f7cf7;
+  --glass: rgba(255, 255, 255, 0.06);
+}
+
+* {
+  box-sizing: border-box;
+}
+html,
 body {
-    background-color: rgb(92, 40, 88);
-    font-weight: bold;
-    text-align: center;
+  height: 100%;
+  margin: 0;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  .log-item.positive {
+    background: linear-gradient(180deg, #2fe07a 0%, #1fa75a 100%);
+    color: #041018;
+    box-shadow: 0 8px 20px rgba(17, 90, 44, 0.18);
+  }
+
+  .log-item.negative {
+    background: linear-gradient(180deg, #ff7b7b 0%, #e64b4b 100%);
+    color: #fff;
+    box-shadow: 0 8px 20px rgba(140, 28, 28, 0.18);
+  }
+
+  .log-item.zero {
+    background: rgba(255, 255, 255, 0.04);
+    color: #fff;
+  }
+  font-size: 16px;
+}
+
+body {
+  background: radial-gradient(
+      circle at 10% 20%,
+      rgba(255, 255, 255, 0.03),
+      transparent 10%
+    ),
+    linear-gradient(135deg, var(--bg-1) 0%, #2b2d6a 40%, var(--bg-2) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  color: #efeaff;
+  font-weight: 600;
+  padding: 3.5rem;
 }
 
 /* The container */
 .counter-app {
-    display: inline-block;
-    background-color: rgb(244, 209, 237);
-
-    max-width:7cm;
-    border-radius: 7px;
-    padding: 40px 30px;
-    margin-top: 50px;
+  width: 440px;
+  max-width: 90%;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.03),
+    rgba(255, 255, 255, 0.02)
+  );
+  border-radius: 20px;
+  padding: 44px;
+  box-shadow: 0 18px 40px rgba(16, 10, 40, 0.55),
+    inset 0 1px 0 rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(8px);
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.06);
 }
 
-/* text and buttons */
+/* header */
 h1 {
-    margin: 10px;
+  margin: 0 0 8px;
+  font-size: 1.05rem;
+  color: #f3eaff;
+  opacity: 0.98;
+  letter-spacing: 0.8px;
+  font-weight: 800;
 }
 
 h2 {
-    font-size: 50px;
-    margin-top: 0;
-    margin-bottom: 20px;
+  font-size: 5rem;
+  margin: 8px 0 20px;
+  color: #fff;
+  text-shadow: 0 8px 28px rgba(79, 56, 160, 0.45);
+  line-height: 1;
+  font-weight: 900;
 }
-
+/* small description */
 p {
-    color: rgb(66, 52, 74);
+  margin: 25px 0 26px;
+  color: rgba(235, 220, 255, 0.9);
+  font-size: 1.05rem;
 }
 
+/* color and animation for count depending on sign */
+#count-el {
+  display: block; /* keep the counter on its own line */
+  width: 100%;
+  margin: 6px 0 18px;
+  text-align: center; /* ensure centered above the controls */
+  transition: color 160ms ease, transform 140ms cubic-bezier(0.2, 0.9, 0.2, 1);
+}
+
+#count-el.positive {
+  color: #8ef3b0; /* mint/green */
+  text-shadow: 0 10px 30px rgba(64, 220, 140, 0.12);
+}
+
+#count-el.negative {
+  color: #ff9b9b; /* red */
+  text-shadow: 0 10px 30px rgba(255, 90, 90, 0.12);
+}
+
+#count-el.zero {
+  color: #fff; /* neutral */
+  text-shadow: 0 8px 28px rgba(79, 56, 160, 0.18);
+}
+
+/* small pop when the number changes */
+#count-el.pop {
+  transform: scale(1.08);
+}
+
+
+
+/* button row */
+.controls {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+}
+
+/* common button styles */
 button {
-    border: none;
-    height: 1cm;
-    width: 2cm;
-    font-weight: 560;
-
-    border-radius: 1mm;
-    background-color: rgb(45, 45, 104);
-    color: white;
+  border: none;
+  cursor: pointer;
+  padding: 14px 20px;
+  font-weight: 800;
+  color: white;
+  border-radius: 14px;
+  min-width: 78px;
+  transition: transform 120ms ease, box-shadow 160ms ease, opacity 120ms ease;
+  box-shadow: 0 12px 28px rgba(46, 35, 124, 0.26);
+  user-select: none;
+  font-size: 1rem;
 }
 
+/* primary button (increment) */
+.btn-primary {
+  background: linear-gradient(
+    180deg,
+    var(--btn-grad-start),
+    var(--btn-grad-end)
+  );
+  letter-spacing: 0.8px;
+  padding: 16px 24px;
+  min-width: 96px;
+  font-size: 1.05rem;
+}
+
+/* secondary (decrement) */
+.btn-secondary {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.06),
+    rgba(255, 255, 255, 0.02)
+  );
+  color: #efeaff;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 10px 24px rgba(25, 20, 50, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.02);
+}
+
+/* Specific styling for the plus/minus buttons by ID */
+/* Plus (increment) — vibrant green, stylish gradient + subtle glow */
+#increment-btn {
+  background: linear-gradient(180deg, #2fe07a 0%, #1fa75a 100%);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 12px 28px rgba(24, 120, 60, 0.22),
+    0 6px 18px rgba(17, 90, 44, 0.14);
+  min-width: 96px;
+  padding: 16px 24px;
+  border-radius: 14px;
+}
+
+#increment-btn:hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 0 28px 48px rgba(24, 120, 60, 0.28),
+    0 10px 24px rgba(17, 90, 44, 0.18);
+}
+
+#increment-btn:active {
+  filter: brightness(0.94);
+  transform: translateY(0);
+}
+
+/* Minus (decrement) — warm red to make it clear/dangerous */
+#decrement-btn {
+  background: linear-gradient(180deg, #ff7b7b 0%, #e64b4b 100%);
+  color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 12px 28px rgba(140, 28, 28, 0.22),
+    0 6px 18px rgba(120, 20, 20, 0.12);
+  min-width: 96px;
+  padding: 16px 24px;
+  border-radius: 14px;
+}
+
+#decrement-btn:hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 0 28px 48px rgba(140, 28, 28, 0.3),
+    0 10px 24px rgba(120, 20, 20, 0.18);
+}
+
+#decrement-btn:active {
+  filter: brightness(0.94);
+  transform: translateY(0);
+}
+
+/* save / link style — made more visible */
 .save-btn {
-    background-color: transparent;
-    color: rgb(0, 21, 128);
+  /* energetic teal gradient for strong contrast against the purple background */
+  background: linear-gradient(180deg, #00e6c3 0%, #00b388 100%);
+  color: #041018; /* dark text for legibility */
+  border: none;
+  padding: 12px 18px;
+  font-weight: 800;
+  border-radius: 12px;
+  font-size: 0.98rem;
+  box-shadow: 0 12px 30px rgba(0, 179, 136, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  transition: transform 120ms ease, box-shadow 160ms ease, filter 120ms ease;
 }
 
+.save-btn:hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 0 28px 48px rgba(0, 179, 136, 0.28),
+    0 10px 24px rgba(0, 120, 90, 0.14);
+}
+
+.save-btn:active {
+  transform: translateY(0);
+  filter: brightness(0.95);
+}
+
+/* hover & active effects */
 button:hover {
-    color: rgb(35, 35, 35);
-    background-color: rgba(184, 184, 236, 0.654);
+  transform: translateY(-4px);
+  box-shadow: 0 26px 44px rgba(46, 35, 124, 0.34);
+  opacity: 0.99;
 }
 
 button:active {
-    color: rgb(99, 99, 212);
+  transform: translateY(0);
+  outline-offset: 3px;
 }
