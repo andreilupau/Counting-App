@@ -6,6 +6,11 @@ A simple and interactive counter web application that allows users to increment,
 
 ---
 
+## 🚀 Live Preview
+👉 *[https://andreilupau.github.io/Counting-App/]*  
+
+---
+
 ## 🚀 Features
 
 - ➕ Increment and ➖ Decrement buttons
